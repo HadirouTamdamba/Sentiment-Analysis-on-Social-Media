@@ -9,20 +9,20 @@ from sklearn.metrics import accuracy_score
 import xgboost as xgb
 import joblib
 
-# Charger les données
+# Upload data
 data = pd.read_csv("data/Tweets.csv")
 
-# Prétraitement
+# Data Preprocessing 
 X = data["text"]
 y = data["airline_sentiment"]
 
-# Vectorisation des textes
+# Text vectorization
 vectorizer = TfidfVectorizer(max_features=5000)
 X_vec = vectorizer.fit_transform(X)
 
 X_train, X_test, y_train, y_test = train_test_split(X_vec, y, test_size=0.2, random_state=42)
 
-# Comparaison des modèles
+# Comparison of models
 models = {
     "MultinomialNB": MultinomialNB(),
     "Logistic Regression": LogisticRegression(random_state=42),
@@ -36,9 +36,9 @@ for name, model in models.items():
     y_pred = model.predict(X_test)
     accuracy = accuracy_score(y_test, y_pred)
     results[name] = accuracy
-    print(f"{name} - Accuracy: {accuracy}")
+    print(f"{name} - Accuracy: {accuracy}") 
 
-# Sauvegarder le meilleur modèle
+# Saving the best model 
 best_model_name = max(results, key=results.get)
 best_model_name
 best_model = models[best_model_name]

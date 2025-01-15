@@ -4,7 +4,7 @@ import numpy as np
 
 app = Flask(__name__)
 
-# Charger le modèle et le vectoriseur
+# Load the best model and vectorizor    
 model = joblib.load("models/best_sentiment_analysis_model.pkl") 
 vectorizer = joblib.load("models/tfidf_vectorizer.pkl")
 
