@@ -7,6 +7,7 @@ The goal is to analyze user sentiment from tweets about airlines. This project i
 The **Twitter US Airline Sentiment** dataset contains 14,640 tweets with the following variables:
 - **text**: Tweet content.
 - **airline_sentiment**: Sentiment (positive, negative, neutral).
+- etc. (https://www.kaggle.com/datasets/crowdflower/twitter-airline-sentiment)
 
 ## Exploratory Data Analysis (EDA)
 - Distribution of sentiments.
